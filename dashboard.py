@@ -89,7 +89,7 @@ def layout():
 
     fig2=px.histogram(df['Salary_SEK'], nbins=12,
                       title=f"Employees salary - histogram",
-                      labels={"count":"Number of employees", "value":"Frequnecy"},
+                      labels={"count":"Number of employees", "value":"Salary"},
                       )
 
     fig2.update_layout(showlegend=False)
@@ -105,6 +105,25 @@ def layout():
     fig2.update_layout(showlegend=False)
     st.plotly_chart(fig2)
 
+    st.header("Histogram salary")
+
+    fig3=px.histogram(df['Age'], nbins=12,
+                      title=f"Employees age - histogram",
+                      labels={"count":"Number of employees", "value":"Age"},
+                      )
+
+    fig3.update_layout(showlegend=False)
+    st.plotly_chart(fig3)
+
+    st.header("Boxplot age by department")
+
+    fig4=px.box(df, x='Department', y='Age',
+                      title=f"Employees age per department",
+                      labels={"index":"Department", "value":"Age"},
+                      )
+
+    fig4.update_layout(showlegend=False)
+    st.plotly_chart(fig4)
 
     read_css()
 
