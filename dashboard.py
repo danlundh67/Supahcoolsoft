@@ -4,22 +4,6 @@ from pathlib import Path
 import plotly.express as px
 
 
-""" ## 0. Supahcoolsoft employee executive dashboard
-
-Create a dashboard in streamlit displaying this employee data to the executives. Call it `Executive dashboard` for coolness sake. It should contain: 
-
-- basic statistics on employees (total count, average age, average salary)
-- show a table with employee details
-- bar chart showing number of employees accross departments
-- histogram of salary distribution
-- box plot of salaries by department
-- histogram of age distribution
-- box plot of ages by department
-
-Style the dashboard to make it more exclusive for executives.
- """
-
-
 
 def read_data():
     data_path = Path(__file__).parents[0] 

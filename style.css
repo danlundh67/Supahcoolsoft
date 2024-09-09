@@ -1,5 +1,8 @@
 /*  modular scale */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
+  /* modular scale */
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
@@ -12,26 +15,61 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+
+  --primaryColor: #050505;
+  --backgroundColor: #fafafa;
+  --backgroundColorSecondary: #ebebeb;
+}
+
+.stAppViewMain {
+  background-color: var(--backgroundColorSecondary);
+}
+/* lobotomized owl selector to give even margins */
+body * + * {
+  margin-top: var(--s-2);
 }
 
 h1,
 h2,
-h3 {
-  color: #edbd7c;
+h3,
+p {
+  color: var(--primaryColor);
+  font-family: "Poppins", sans-serif;
 }
 
-h1 {
-  font-size: var(--s3);
-}
-
-h2 {
-  font-size: var(--s2);
+p {
+  font-size: var(--s0);
 }
 
 h3 {
   font-size: var(--s1);
 }
+h2 {
+  font-size: var(--s2);
+}
+h1 {
+  font-size: var(--s3);
+}
 
-p {
-  font-size: var(--s0);
+[data-testid|="column"] {
+  margin-top: 0; /* counter lobotomized owl */
+  margin-left: var(--s1);
+}
+
+[data-testid|="stHeader"] {
+  display: none;
+}
+
+.stAppViewBlockContainer {
+  background-color: var(--backgroundColor);
+  padding-top: var(--s1);
+  padding-left: var(--s3);
+  padding-right: var(--s3);
+  padding-bottom: var(--s3);
+  max-width: 110ch;
+}
+
+/* to counter lobotomized owl to remove top margin */
+.stAppViewContainer {
+  margin-top: 0;
 }
